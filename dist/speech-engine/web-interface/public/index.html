@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Table</title>
+    <link rel="stylesheet" href="css/appointments.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="js/backend.js"></script>
+</head>
+<body>
+    <div class="appointments-box">
+        <h1>Appointments</h1>
+        <table class="appointments-table" id="appointments">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Business</th>
+                    <th>Phone</th>
+                    <th>Service</th>
+                    <th>Time</th>
+                    <th>Availability</th>
+                    <th>Status</th>
+                    <th>Summary</th>
+                    <th>Recording</th>
+                    <th style="width: 100px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button class="ui-btn add-row">Make Appointment</button>
+    </div>
+    <div class="dialog-box" id="appointment-dialog">
+        <div class="dialog-content">
+            <div class="close">&times;</div>
+            <div class="dialog-form">
+                <form id="appt-form">
+                    <label for="name" class="form-label">Client Name:</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Jane Doe" required>
+                    <label for="name" class="form-label">Business:</label>
+                        <input type="text" id="business" name="business" class="form-input" placeholder="Beauty Hair Salon" required>
+                    <label for="tel" class="form-label">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+12224448888" required>    
+                    <label for="service" class="form-label">Service:</label>
+                        <input type="text" id="service" name="service" class="form-input" placeholder="a perm and a wash" required>
+                    <label for="time" class="form-label">Time:</label>
+                        <input type="text" id="time" name="time" class="form-input" placeholder="2pm Tuesday" required>
+                    <label for="availability" class="form-label">Availability:</label>
+                        <input type="text" id="availability" name="availability" class="form-input" placeholder="between 1pm and 3pm Tuesday" required>
+                    <div class="form-actions">
+                        <button type="button" onclick="addAppointment()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-box transcript-dialog" id="transcript-dialog">
+        <div class="dialog-content">
+            <div class="dialog-header">Call Transcript</div>
+            <div class="close close-transcript">&times;</div>
+            <div id="transcript">
+
+            </div>
+        </div>
+    </div>
+	<script>
+		const addRowButton = document.querySelector('.add-row');
+		const dialogBox = document.querySelector('.dialog-box');
+        const transcriptDialogBox = document.querySelector('.transcript-dialog');
+		const closeButton = dialogBox.querySelector('.close');
+        const closeTranscriptButton = document.querySelector('.close-transcript');
+
+        closeTranscriptButton.addEventListener('click', () => {
+            transcriptDialogBox.style.display = 'none';
+        });
+
+		addRowButton.addEventListener('click', () => {
+			dialogBox.style.display = 'block';
+		});
+
+		closeButton.addEventListener('click', () => {
+			dialogBox.style.display = 'none';
+		});
+	</script>
+</body>
+</html>

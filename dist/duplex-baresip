@@ -1,0 +1,10 @@
+#!/bin/bash
+mkfifo /tmp/baresip.pipe
+sleep infinity > /tmp/baresip.pipe &
+while read line; do
+	echo ">>> $line"
+	if [[ $(echo $line | grep -E "Call with .+? terminated") ]]; then
+		echo "SENDING SIGALRM TO NODE"
+		pkill -SIGALRM node
+	fi
+done < <(baresip -f baresip -e '/answermode auto' < /tmp/baresip.pipe)

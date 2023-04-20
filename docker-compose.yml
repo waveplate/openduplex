@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+
+  duplex:
+    user: duplex
+    hostname: duplex
+    build: ./docker/duplex
+    volumes:
+      - type: bind
+        source: ./dist
+        target: /home/duplex
+    ports:
+      - 3000:3000
+    networks:
+      duplex:
+        aliases:
+          - duplex
+    entrypoint: /entrypoint.sh
+    depends_on:
+      - mongo
+    env_file:
+      - config.env
+    restart: always
+
+  mongo:
+    build: ./docker/mongo
+    networks:
+      duplex:
+        aliases:
+          - mongo
+    restart: always
+
+networks:
+  duplex:

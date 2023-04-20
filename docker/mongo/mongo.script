@@ -1,0 +1,38 @@
+use duplex
+db.createCollection('appointments', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['name', 'business', 'phone', 'service', 'time', 'availability'],
+      properties: {
+        name: {
+          bsonType: 'string',
+        },
+        business: {
+          bsonType: 'string',
+        },
+        phone: {
+          bsonType: 'string',
+        },
+        service: {
+          bsonType: 'string',
+        },
+        time: {
+          bsonType: 'string',
+        },
+        availability: {
+          bsonType: 'string',
+        },
+        status: {
+          bsonType: 'string',
+        },
+        recording: {
+          bsonType: 'string',
+        },
+        transcript: {
+          bsonType: 'object',
+        },
+      },
+    },
+  },
+})
