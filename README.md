@@ -1,9 +1,7 @@
 # openduplex
 openduplex uses speech-to-text, artificial intelligence and text-to-speech, to call businesses and make appointments for you.
 
-[listen to openduplex booking an appointment for a perm and a wash](https://vocaroo.com/1kKopYVMv3NJ)
-
-[listen to another example](https://vocaroo.com/1frxB3rvGYzw)
+[listen to openduplex booking an appointment for a perm and a wash](https://vocaroo.com/1frxB3rvGYzw)
 
 ![openduplex web ui](https://i.imgur.com/3mPGZUG.png)
 
