@@ -12,7 +12,7 @@ openduplex also spawns an expressjs API and a simple web interface for booking a
 - SIP account to make VOIP calls
 - OpenAI API key (for natural language)
 - Deepgram API key (for streaming speech-to-text)
-- *optionally*, a ElevenLabs API key (for realistic text-to-speech)
+- *optionally*, a ElevenLabs API key or a 60db API key (for realistic text-to-speech)
 -- otherwise, openduplex can use *espeak* for text-to-speech, which also decreases latency
 
 # setup
@@ -26,7 +26,9 @@ openduplex also spawns an expressjs API and a simple web interface for booking a
 | `DEEPGRAM_API_TOKEN` | `505644d665e2c01ce2b2dfcd61396efa4b2d5a33` | your Deepgram API key |
 | `ELEVENLABS_API_KEY` | `c53af3d18ca8188b9d3164e8726a911b` | your ElevenLabs API key |
 | `ELEVENLABS_VOICE_ID` | `21m00Tcm4TlvDq8ikWAM` | ElevenLabs voice id, default value is "Rachel" |
-| `SPEECH_TTS` | `elevenlabs` or `espeak` | which speech-to-text to use |
+| `SIXTYDB_API_KEY` | `sk_live_XXXXXXXXXXXXXXXXXXXXXXXX` | your 60db API key (only needed if `SPEECH_TTS` is `60db`) |
+| `SIXTYDB_VOICE_ID` | `fbb75ed2-975a-40c7-9e06-38e30524a9a1` | 60db voice id, default value is the 60db default voice |
+| `SPEECH_TTS` | `elevenlabs`, `60db` or `espeak` | which text-to-speech to use |
 
 ### docker
 edit `config.env.example` and rename it to `config.env`
