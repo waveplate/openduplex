@@ -1,7 +1,8 @@
 {
     "dependencies": {
       "openai": "^3.2.1",
-      "elevenlabs-api": "^1.0.6"
+      "elevenlabs-api": "^1.0.6",
+      "ws": "^8.13.0"
     }
   }
   
